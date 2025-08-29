@@ -18,9 +18,44 @@ Mini project: which skills appear most often in a small snapshot of remote tech 
 ### Quick start (Windows / macOS / Linux)
 Install the only dependency and run the four scripts in order:
 
-```bash
+~~~bash
 pip install -r requirements.txt
 python 01_load_json.py
 python 02_tag_skills.py
 python 03_analyze.py
 python 04_visualize.py
+~~~
+
+> Windows tip: if `python` doesn’t work, try `py` instead:
+> `py 01_load_json.py`, `py 02_tag_skills.py`, etc.
+
+## Outputs
+- `data/top_skills.csv`
+- `figs/top_skills.png`
+- (optional) `data/jobs.sqlite`
+
+## Notes
+- Source: Remote OK (public JSON endpoint). Please credit and link back: https://remoteok.com/
+- This is intentionally small/beginner-friendly: raw → db → csv → chart.
+
+## Repo layout
+~~~
+job-skills-mini/
+├─ 01_load_json.py
+├─ 02_tag_skills.py
+├─ 03_analyze.py
+├─ 04_visualize.py
+├─ README.md
+├─ requirements.txt
+├─ data/
+│  ├─ remoteok_2025-08-29.json
+│  ├─ top_skills.csv
+│  └─ jobs.sqlite   (optional)
+├─ figs/
+│  └─ top_skills.png
+└─ sql/
+   └─ schema.sql
+~~~
+
+## License
+MIT
